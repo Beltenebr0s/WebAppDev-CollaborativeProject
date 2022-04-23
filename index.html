@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take It!</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <div class="form">
+            <div class="changeLogin">
+                <button id="tec_btn" onclick="ToTecIDLogin();">Login with Tec ID</button>
+                <button id="email_btn" onclick="ToEmailLogin();">Login with Email</button>
+            </div>
+            <form method="post" action="./src/php/login.php">
+                <label for="user" id="user_lbl">Tec ID: </label>
+                <input type="text" id="user"> <br>
+
+                <label for="passwd">Password</label>
+                <input type="password" id="passwd"> <br>
+
+                <input type="hidden" id="loginType" value="0">
+
+                <input type="submit" value="Log in!">
+            </form>
+            No account yet? <a href="./signup.html">Sign up here!</a>
+        </div>
+    </div>
+    <script src="./src/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign up!</h1>
+        <div class="form">
+            <form method="post">
+                <label for="name">Name: </label>
+                <input type="text" id="name"> <br>
+
+                <label for="surname1">First Surname: </label>
+                <input type="text" id="surname1"> <br>
+
+                <label for="surname2">Second Surname (if any): </label>
+                <input type="text" id="surname2"> <br>
+
+                <label for="email">Tec de Monterrey email: </label>
+                <input type="text" id="email"> <br>
+
+                <label for="passwd1">Password: </label>
+                <input type="password" id="passwd1"> <br>
+
+                <label for="passwd2">Confirm password: </label>
+                <input type="password" id="passwd2"> <br>
+
+                <!-- The list of campuses should be created dynamically but this 
+                will do for now  -->
+                <select id="campus">
+                    <option id="0">Select Campus</option>
+                    <option id="1">Querétaro</option>
+                </select>
+
+                <input type="submit" value="Sign me up!">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
