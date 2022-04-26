@@ -1,0 +1,134 @@
+:root {
+    --global-color-alpha: #22378e;
+    --global-color-alpha-x-light: #6479d1;
+    --global-color-alpha-xx-light: #c5cbe5;
+    --global-color-alpha-xxx-light: #e4e7f7;
+
+    --global-color-neutral: #1e243d;
+    --global-color-neutral-x-light: #666b80;
+    --global-color-neutral-xx-light: #9ba0b3;
+    --global-color-neutral-xxx-light: #c7cbd9;
+    --global-color-neutral-xxxx-light: #f7f8fc;
+}
+
+html {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+
+
+/*----------------------------
+globally usable objects
+----------------------------*/
+
+.container-wide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.form > * {
+    margin-bottom: 12px;
+}
+
+
+/* custom inputs */
+
+.radio-switch {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid var(--global-color-alpha);
+    border-radius: 32px;
+    font-weight: 700;
+    color: var(--global-color-alpha);
+}
+
+
+.radio-switch__label {
+    padding: 4px 20px;
+    border-radius: 32px;
+}
+
+.radio-switch__input:checked + .radio-switch__label {
+    color: var(--global-color-neutral-xxxx-light);
+    background-color: var(--global-color-alpha);
+}
+
+.text-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-input__textbox {
+    border: 2px solid var(--global-color-alpha-xx-light);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.text-input__textbox:focus-visible {
+    outline: none;
+    border-color: var(--global-color-alpha-x-light);
+}
+
+.btn-sm {
+    font-family: "Raleway";
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--global-color-neutral-xxxx-light);
+    background-color: var(--global-color-alpha);
+    border: none;
+    border-radius: 8px;
+    padding: 6px 8px;
+}
+
+
+/* text */
+
+.title {
+    color: var(--global-color-alpha);
+    text-align: center;
+    margin-top: 0;
+}
+
+
+
+/*----------------------------
+single use components
+----------------------------*/
+
+.login-form {
+    padding-left: 48px;
+    width: 270px;
+}
+
+
+
+/*----------------------------
+single modification utilities
+----------------------------*/
+
+.hide-input {
+    display: none;
+}
+
+.center {
+    height: 90vh;
+}
+
+.full-width {
+    width: 100%;
+}
+
+
+/* text */
+
+.color-alpha {
+    color: var(--global-color-alpha);
+}
+
+.text-center {
+    text-align: center;
+}
