@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="./src/php/new_post.php" method="post" enctype="multipart/form-data">
+            <label for="title">Title: </label>
+            <input type="text" id="title"> <br>
+            <label for="desc">Description: </label>
+            <input type="text" id="desc"> <br>
+            <!-- Here we need an input field for uploading images but I don't remember how it was done -->
+            <input type="submit" value="Post!">
+        </form>
+    </div>
+</body>
+</html>

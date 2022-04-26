@@ -8,21 +8,28 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <!-- Here we'll put the image logo and that -->
-            <div id="logo-image"></div>
-        </div>
+        ##header##
         <div class="body">
-            <table id="product-list">
-                <tr>
-                    <th>Product list</th>
-                </tr>
+            <div class="search-bar">
+                <label for="search-bar">Search: </label> 
+                <input type="text" id="search-bar" onchange="SearchProducts(this.value);">
+            </div>
+            <div id="product-list" style="border: 2px solid blue;">
+                <div>
+                    <h2>Product list</h2>
+                </div>
                 ##table-row##
-                <td>##row-content##</td>
+                <div style="border: 2px solid green;">
+                    ##row-content##
+                </div>
                 ##table-row##
 
-            </table>
+            </div>
+            <div class="button">
+                <button type="button" onclick="NewPost();">New post</button>
+            </div>
         </div>
     </div>
+    <script src="../js/main.js"></script>
 </body>
 </html>
