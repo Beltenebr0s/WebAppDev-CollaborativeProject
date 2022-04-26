@@ -9,11 +9,14 @@
     --global-color-neutral-xx-light: #9ba0b3;
     --global-color-neutral-xxx-light: #c7cbd9;
     --global-color-neutral-xxxx-light: #f7f8fc;
+    --global-color-neutral-xxxxx-light: #fcfdff;
 }
 
 html {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
+
+    background-color: var(--global-color-neutral-xxxxx-light);
 }
 
 
@@ -43,6 +46,9 @@ globally usable objects
     border-radius: 32px;
     font-weight: 700;
     color: var(--global-color-alpha);
+    width: 260px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -101,7 +107,12 @@ single use components
 
 .login-form {
     padding-left: 48px;
-    width: 270px;
+    width: 300px;
+}
+
+.signup-form {
+    padding-left: 48px;
+    width: 340px;
 }
 
 
