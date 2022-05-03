@@ -5,16 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="header">
+        <svg class="logo-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="366" height="366" viewBox="0 0 366 366">
+            <defs>
+              <clipPath id="clip-path">
+                <rect id="Rectangle_15" data-name="Rectangle 15" width="295.567" height="295.567" transform="translate(382.216 364.216)" fill="#22378e"/>
+              </clipPath>
+            </defs>
+            <g id="logo-light" transform="translate(-347 -329)">
+              <circle id="Ellipse_1" data-name="Ellipse 1" cx="183" cy="183" r="183" transform="translate(347 329)" fill="#fcfdff"/>
+              <g id="Group_3" data-name="Group 3" clip-path="url(#clip-path)">
+                <path id="Path_10" data-name="Path 10" d="M531.815,402.262V368.693a4.519,4.519,0,0,0-7.005-3.723l-92.741,62.422a4.5,4.5,0,0,0-1.972,3.717,4.442,4.442,0,0,0,1.972,3.721l92.7,62.4a4.476,4.476,0,0,0,7-3.711V457.438a333.506,333.506,0,0,1,36.709,1.936c48.232,5.743,61.131,34.679,61.66,35.909a4.438,4.438,0,0,0,4.129,2.723,3.7,3.7,0,0,0,.868-.082,4.478,4.478,0,0,0,3.6-4.38C638.74,420.445,551.94,404.878,531.815,402.262Z" fill="#22378e"/>
+                <path id="Path_11" data-name="Path 11" d="M627.924,589.152l-92.719-62.393a4.5,4.5,0,0,0-4.6-.281,4.561,4.561,0,0,0-2.359,3.974v36.092A333.277,333.277,0,0,1,491.54,564.6c-48.253-5.74-61.155-34.673-61.663-35.9a4.475,4.475,0,0,0-4.126-2.722,3.7,3.7,0,0,0-.889.085,4.471,4.471,0,0,0-3.6,4.385c0,73.085,86.791,88.673,106.94,91.3V655.31a4.494,4.494,0,0,0,6.984,3.717l92.74-62.413a4.521,4.521,0,0,0,1.975-3.724A4.436,4.436,0,0,0,627.924,589.152Z" fill="#22378e"/>
+              </g>
+            </g>
+          </svg>              
+    </div>
     <div class="container">
-        <form action="./src/php/new_post.php" method="post" enctype="multipart/form-data">
-            <label for="title">Title: </label>
-            <input type="text" id="title"> <br>
-            <label for="desc">Description: </label>
-            <input type="text" id="desc"> <br>
+        <form class="form form-stacked form-background" action="./src/php/new_post.php" method="post" enctype="multipart/form-data">
+            <div class="text-input-vertical">
+                <label for="files">Add images:</label>
+                <input type="file" id="files" name="files" multiple><br><br>
+            </div>
+
+            <div class="text-input-vertical">
+                <label for="title">Title: </label>
+                <input class="text-input__textbox" type="text" id="title">
+            </div>
+            
+            <div class="text-input-vertical">
+                <label for="category">Category: </label>
+                <select id="category"></select>
+            </div>
+
+            <div class="text-input-vertical">
+                <label for="desc">Description: </label>
+                <textarea class="text-input__textbox" id="desc"></textarea>
+            </div>
+            <!-- <input type="text" id="desc"> <br> -->
             <!-- Here we need an input field for uploading images but I don't remember how it was done -->
-            <input type="submit" value="Post!">
+            <input class="btn-sm" type="submit" value="Post!">
         </form>
     </div>
 </body>

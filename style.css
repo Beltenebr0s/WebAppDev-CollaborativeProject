@@ -4,6 +4,7 @@
     --global-color-alpha-xx-light: #c5cbe5;
     --global-color-alpha-xxx-light: #e4e7f7;
 
+    --global-color-neutral-x-dark: #090E24;
     --global-color-neutral: #1e243d;
     --global-color-neutral-x-light: #666b80;
     --global-color-neutral-xx-light: #9ba0b3;
@@ -15,15 +16,26 @@
 html {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
+    color: var(--global-color-neutral-x-dark);
 
     background-color: var(--global-color-neutral-xxxxx-light);
 }
 
+input {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+}
 
 
 /*----------------------------
 globally usable objects
 ----------------------------*/
+
+.container {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .container-wide {
     display: flex;
@@ -32,8 +44,30 @@ globally usable objects
     flex-direction: row;
 }
 
+.header {
+    background-color: var(--global-color-alpha);
+    height: 100px;
+    /* width: 100vw; */
+    margin: 0;
+}
+
 .form > * {
     margin-bottom: 12px;
+}
+
+
+.form-stacked > * {
+    display: block;
+}
+
+.form-background {
+    padding: 32px;
+    box-shadow: 0px -1px 63px -3px rgba(0,0,0,0.44);
+    border-radius: 32px;
+}
+
+.logo-sm {
+    width: 60px;
 }
 
 
@@ -68,10 +102,20 @@ globally usable objects
     align-items: center;
 }
 
+.text-input-vertical {
+    margin-bottom: 32px;
+}
+
+.text-input-vertical > * {
+    display: block;
+    margin-bottom: 8px;
+}
+
 .text-input__textbox {
     border: 2px solid var(--global-color-alpha-xx-light);
     border-radius: 8px;
     padding: 4px;
+    width: 200px;
 }
 
 .text-input__textbox:focus-visible {
@@ -88,6 +132,7 @@ globally usable objects
     border: none;
     border-radius: 8px;
     padding: 6px 8px;
+    cursor: pointer;
 }
 
 
@@ -112,7 +157,7 @@ single use components
 
 .signup-form {
     padding-left: 48px;
-    width: 340px;
+    width: 360px;
 }
 
 
