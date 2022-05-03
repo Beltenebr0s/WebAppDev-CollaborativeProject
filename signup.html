@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../style.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@
         </svg>
         <div class="signup-form">
             <h1 class="title">Sign up</h1>
-            <form class="form" method="post">
+            <form class="form" method="post" action="signup_user.php">
               <div class="text-input">
                 <label for="name">Name*</label>
                 <input class="text-input__textbox" type="text" id="name">
@@ -58,12 +58,19 @@
 
               <!-- The list of campuses should be created dynamically but this 
               will do for now  -->
-              <!-- <select id="campus">
-                  <option id="0">Select Campus</option>
-                  <option id="1">Querétaro</option>
-                  <option id="2">Monterrey</option>
-                  <option id="3">CDMX</option>
-              </select> -->
+              <div class="text-input">
+                <label for="campus">Select campus*</label>
+                <select id="campus">
+                    <option id="0">Select Campus</option>
+                    ##option_row##
+                    <option id ="##option_id##">##option_name##</option>
+                    ##option_row##
+                    <!-- <option id="1">Querétaro</option>
+                    <option id="2">Monterrey</option>
+                    <option id="3">CDMX</option> -->
+                </select>
+              </div>
+              
 
               <input class="btn-sm full-width" type="submit" value="Sign me up!">
             </form>
