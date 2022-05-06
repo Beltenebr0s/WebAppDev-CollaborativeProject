@@ -30,51 +30,45 @@
         </svg>
         <div class="signup-form">
             <h1 class="title">Sign up</h1>
-            <form class="form" method="post" action="signup_user.php">
+            <form class="form" method="post" action="signup_user.php" onsubmit="ValidateSignupForm();" name="signup">
               <div class="text-input">
                 <label for="name">Name*</label>
-                <input class="text-input__textbox" type="text" id="name">
+                <input class="text-input__textbox" type="text" id="name" name="name" required>
               </div>
               <div class="text-input">
                 <label for="surname1">First Surname*</label>
-                <input class="text-input__textbox" type="text" id="surname1">
+                <input class="text-input__textbox" type="text" id="surname1" name="surname1" required>
               </div>
               <div class="text-input">
                 <label for="surname2">Second Surname</label>
-                <input class="text-input__textbox" type="text" id="surname2">
+                <input class="text-input__textbox" type="text" id="surname2" name="surname2">
               </div>
               <div class="text-input">
                 <label for="email">Email*</label>
-                <input class="text-input__textbox" type="email" id="email">
+                <input class="text-input__textbox" type="email" id="email" name="email" required>
               </div>
               <div class="text-input">
                 <label for="passwd1">Password*</label>
-                <input class="text-input__textbox" type="password" id="passwd1">
+                <input class="text-input__textbox" type="password" id="passwd1" name="passwd1" required>
               </div>
               <div class="text-input">
                 <label for="passwd2">Confirm password*</label>
-                <input class="text-input__textbox" type="password" id="passwd2">
+                <input class="text-input__textbox" type="password" id="passwd2" name="passwd2" required>
               </div>
 
-              <!-- The list of campuses should be created dynamically but this 
-              will do for now  -->
               <div class="text-input">
                 <label for="campus">Select campus*</label>
-                <select id="campus">
+                <select id="campus" name="campus" required>
                     <option id="0">Select Campus</option>
                     ##option_row##
                     <option id ="##option_id##">##option_name##</option>
                     ##option_row##
-                    <!-- <option id="1">Querétaro</option>
-                    <option id="2">Monterrey</option>
-                    <option id="3">CDMX</option> -->
                 </select>
               </div>
-              
-
               <input class="btn-sm full-width" type="submit" value="Sign me up!">
             </form>
         </div>
     </div>
+    <script type="text/javascript" src="../../src/js/signup.js"></script>
 </body>
 </html>
