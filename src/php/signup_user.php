@@ -20,8 +20,8 @@
     // The $campus variable contains the name of the campus -- we need the id
     $query = "SELECT id FROM campuses WHERE campus_name='$campus'";
     $campus_id = NULL;
-    if($resultado = $db->query($query)){
-        $campus_id = $resultado->fetch_assoc()['id'];
+    if($result = $db->query($query)){
+        $campus_id = $result->fetch_assoc()['id'];
     } else {
         echo "error :(";
     }
@@ -31,7 +31,7 @@
 
     // Insert new user into the database
     if($db->query($query)){
-        echo "todo bien :)";
+        echo "signed in!";
     } else {
         echo "error";
     }

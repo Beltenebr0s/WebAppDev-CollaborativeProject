@@ -14,8 +14,8 @@
     $slices = explode("##option_row##", $html);
 
     $dropdown_options = "";
-    if($resultado = $db->query($sql)){
-        while ($data = $resultado->fetch_assoc()){
+    if($result = $db->query($sql)){
+        while ($data = $result->fetch_assoc()){
             // Grab the dropdown item 
             $aux = $slices[1];
             $aux = str_replace("##option_name##", $data["campus_name"], $aux);

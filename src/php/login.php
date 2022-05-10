@@ -1,19 +1,34 @@
 <?php
     $type = $_POST["loginType"];
-    $user = $_POST["user"];
+    $user_id = $_POST["user"];
     $passwd = $_POST["passwd"];
 
+    
+    // It doesn't matter the mode of login (id or email) we'll 
+    // transform it to a id login anyway, so we don't have to create
+    // two different 
     if($type == 0){
         // Logged in with Tec ID 
+        $user_id = strtolower($user_id);
     } else {
         // Logged in with Tec email
+        $user_id = strtolower($user_id);
+        $user_id = explode("@", $user_id)[0];
     }
 
-    // Make sure it's a Tec account
-
     // Connect to database and all
+    $db = mysqli_connect("localhost:8889", "root", "root", "take_it");
 
-
-    // If there's no error, redirect to the main page
-    header("Location: ./main_page.php");
+    // First retrieve the user
+    $sql = "select id, real_name, passwd from users where enrollment_number = '$user_id'";
+    if($result = $db->query($sql)){
+        // Check the password
+        $data = $result->fetch_assoc();
+        if($passwd == $data['passwd']){
+            echo "login successful";
+            header("Location: ./main_page.php");
+        }
+    } else {
+        echo "error";
+    }
 ?>
