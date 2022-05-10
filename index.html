@@ -32,7 +32,7 @@
             <h1 class="title">Log in</h1>
             <form class="form" method="post" action="./src/php/login.php">
               <div class="radio-switch">
-                  <input class="radio-switch__input hide-input" type="radio" name="login_method" id="tec_btn" onclick="ToTecIDLogin();"></button>
+                  <input class="radio-switch__input hide-input" type="radio" name="login_method" id="tec_btn" onclick="ToTecIDLogin();" checked></button>
                   <label class="radio-switch__label" name="login_method" for="tec_btn">With Tec ID</label>
                   <input class="radio-switch__input hide-input" type="radio" name="login_method" id="email_btn" onclick="ToEmailLogin();"></button>
                   <label class="radio-switch__label" name="login_method" for="email_btn">With Email</label>
@@ -51,7 +51,7 @@
 
               <input class="btn-sm full-width" type="submit" value="Log in">
             </form>
-            <p class="text-center">No account yet? <a href="./src/php/signup_form.php">Sign up here!</a></p>
+            <p class="text-center">No account yet? <a href="./signup.html">Sign up here!</a></p>
         </div>
     </div>
     <script src="./src/js/login.js"></script>
