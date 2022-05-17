@@ -8,7 +8,7 @@
     if(isset($_POST["surname2"])){
         $surname2 = $_POST["surname2"];
     }
-    $email = strtolower($_POST["email"];)
+    $email = strtolower($_POST["email"]);
     $enrollment = explode("@", $email)[0];
     $pwd1 = $_POST["passwd1"];
     $pwd2 = $_POST["passwd2"];

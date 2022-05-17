@@ -30,7 +30,7 @@
         </svg>
         <div class="signup-form">
             <h1 class="title">Sign up</h1>
-            <form class="form" method="post" action="signup_user.php" onsubmit="ValidateSignupForm();" name="signup">
+            <form class="form" method="post" action="./signup_user.php" onsubmit="return ValidateSignupForm();" name="signupForm">
               <div class="text-input">
                 <label for="name">Name*</label>
                 <input class="text-input__textbox" type="text" id="name" name="name" required>
@@ -61,7 +61,7 @@
                 <select class="dropdown" id="campus" name="campus" required>
                     <option id="0" disabled selected hidden>Select Campus</option>
                     ##option_row##
-                    <option id ="##option_id##">##option_name##</option>
+                    <option id ="##option_id##" name="##option_id##">##option_name##</option>
                     ##option_row##
                 </select>
               </div>
