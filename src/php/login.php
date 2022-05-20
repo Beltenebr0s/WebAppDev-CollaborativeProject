@@ -1,4 +1,9 @@
 <?php
+    // Logs the user into the web page
+    //----------------------------------
+    // Start the session
+    session_start();
+
     $type = $_POST["loginType"];
     $user_id = $_POST["user"];
     $passwd = $_POST["passwd"];
@@ -25,8 +30,11 @@
         // Check the password
         $data = $result->fetch_assoc();
         if($passwd == $data['passwd']){
-            echo "login successful";
+            // Set the session to this user
+            $_SESSION['user_id'] = $data['id'];
             header("Location: ./main_page.php");
+        } else {
+            echo "contraseña incorrecta";
         }
     } else {
         echo "error";

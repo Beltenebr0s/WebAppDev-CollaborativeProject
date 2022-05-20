@@ -11,7 +11,9 @@ function ValidateSignupForm(){
     // 2. Check that the value of both password fields is the same
     let p1 = document.forms['signupForm']['passwd1'].value;
     let p2 = document.forms['signupForm']['passwd2'].value;
-    // console.log(p1, p2);
+    // Hash the passwords
+    // let p1_md5 = 
+    // console.log(p1_md5, p2_md5);
     if (p1 !== p2){
         alert("The two passwords must match");
         validationResult = false;
