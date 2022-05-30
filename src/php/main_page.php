@@ -4,6 +4,7 @@
     // TODO: Add an image to the post
     //       Manage user session
     //-----------------------------------------------------------
+    session_start();
     // 1. Get the main page template
     $html = file_get_contents("../../html_templates/main_page_template.html");
     // 2. Split the page in the ##table-row## tag
@@ -31,6 +32,7 @@
         // 4.1. Add the header
     $header = file_get_contents("../../html_templates/header.html");
     $slices[0] = str_replace("##header##", $header, $slices[0]);
+    $slices[0] = str_replace("##user-name##", $_SESSION['user_name'], $slices[0]);
         // 4.2. Join everything
     $page = $slices[0].$table.$slices[2];
 

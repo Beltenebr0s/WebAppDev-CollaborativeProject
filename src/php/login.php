@@ -32,6 +32,7 @@
         if($passwd == $data['passwd']){
             // Set the session to this user
             $_SESSION['user_id'] = $data['id'];
+            $_SESSION['user_name'] = $data['real_name'];
             header("Location: ./main_page.php");
         } else {
             echo "contraseña incorrecta";

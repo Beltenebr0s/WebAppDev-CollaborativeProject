@@ -3,9 +3,11 @@
     // Show the chosen product's details
     // TODO: Add the images
     //-------------------------------------
+    session_start();
     $html = file_get_contents("../../html_templates/product.html");
     $header = file_get_contents("../../html_templates/header.html");
     $html = str_replace("##header##", $header, $html);
+    $html = str_replace("##user-name##", $_SESSION['user_name'], $html);
     // 1. Get the product id from the URL
     $id = $_GET["id"];
     // 2. Retrieve the product from the database
