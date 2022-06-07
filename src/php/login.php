@@ -1,6 +1,7 @@
 <?php
     // Logs the user into the web page
     //----------------------------------
+    include "database.php";
     // Start the session
     session_start();
 
@@ -22,22 +23,21 @@
     }
 
     // Connect to database and all
-    $db = mysqli_connect("localhost:8889", "root", "root", "take_it");
+    // $db = mysqli_connect("localhost:8889", "root", "root", "take_it");
+    $db = db_connection();
 
     // First retrieve the user
     $sql = "select id, real_name, passwd from users where enrollment_number = '$user_id'";
-    if($result = $db->query($sql)){
-        // Check the password
-        $data = $result->fetch_assoc();
-        if($passwd == $data['passwd']){
-            // Set the session to this user
-            $_SESSION['user_id'] = $data['id'];
-            $_SESSION['user_name'] = $data['real_name'];
-            header("Location: ./main_page.php");
-        } else {
-            echo "contraseña incorrecta";
-        }
+    $result = db_query($db, $sql, "Error retrieving the user from the database.");
+    // Check the password
+    $data = $result->fetch_assoc();
+    if(md5($passwd) == $data['passwd']){
+        // Set the session to this user
+        $_SESSION['user_id'] = $data['id'];
+        $_SESSION['user_name'] = $data['real_name'];
+        header("Location: ./main_page.php");
     } else {
-        echo "error";
+        db_error_msg("Contraseña incorrecta.");
     }
+    
 ?>

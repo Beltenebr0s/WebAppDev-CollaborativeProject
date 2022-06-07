@@ -1,4 +1,5 @@
 <?php
+    include "database.php";
     // Adds the new user to the database
     //------------------------------------
     // Grab the information from the form
@@ -19,15 +20,13 @@
     // Introduce the user into the database
     // -------------------------------
     // Connect to the database
-    $db = mysqli_connect("localhost:8889", "root", "root", "take_it");
+    $db = db_connection();
     // The $campus variable contains the name of the campus -- we need the id
     $query = "SELECT id FROM campuses WHERE campus_name='$campus'";
     $campus_id = NULL;
-    if($result = $db->query($query)){
-        $campus_id = $result->fetch_assoc()['id'];
-    } else {
-        echo "error :(";
-    }
+    $result = db_query($db, $query, "Error selecting the campus.");
+    $campus_id = $result->fetch_assoc()['id'];
+     
     // Hash the password for security with MD5 encryption
     $password = md5($pwd1);
     // Write the database query
@@ -35,11 +34,14 @@
              VALUES (NULL, '$name', '$surname1', '$surname2', '$enrollment', '$email', '$password', '$campus_id')";
 
     // Insert new user into the database
-    if($db->query($query)){
-        echo "signed in!";
-    } else {
-        echo "error";
-    }
+    $result = db_query($db, $query, "Error inserting the new user.");
+    // If the insert succeeds, start the session
+    session_start();
+    $_SESSION['user_name'] = $name;
+    $sql =  "SELECT max(id) as id from users";
+    $result = db_query($db, $sql, "Error getting the user id.");
+    $_SESSION['user_id'] = $result->fetch_assoc()['id']; 
+    header("Location: ./main_page.php");
     
     
 ?>

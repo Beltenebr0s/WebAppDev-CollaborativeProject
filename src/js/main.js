@@ -1,3 +1,7 @@
+function GoToMainPage(){
+    window.location.href = "main_page.php";
+}
+
 function SeeProductDetails(id){
     window.location.href = "../../src/php/product.php?id=" + id;
 }
@@ -32,7 +36,7 @@ function DeletePost(id){
     btn_yes.addEventListener('click', () => {
         // Go to the delete product page
         console.log("clicked on delete");
-        // location.href = "../php/delete_post.php?id="+id;
+        location.href = "../php/delete_post.php?id="+id;
     });
     popup.appendChild(btn_yes);
     let btn_no = document.createElement("button");
@@ -41,14 +45,13 @@ function DeletePost(id){
     btn_no.addEventListener('click', () => {
         // Remove the popup
         console.log("clicked on cancel");
-        // popup.style.display = "none";
-        // document.getElementById(id).removeChild(popup);    
+        popup.style.display = "none";
+        document.getElementById(id).removeChild(popup);    
     });
     popup.appendChild(btn_no);
 
     // Show the confirmation popup
     document.getElementById(id).appendChild(popup);
-    // 
 }
 
 function EditPost(id){
@@ -73,5 +76,16 @@ function ManagePosts(){
 }
 
 function LogOut(){
+    RemoveCookie("PHPSESSID");
     window.location.href = "../../index.html";
+}
+
+function RemoveCookie(cookieName)
+{
+    cookieValue = "";
+    cookieLifetime = -1;
+    var date = new Date();
+    date.setTime(date.getTime()+(cookieLifetime*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+    document.cookie = cookieName+"="+JSON.stringify(cookieValue)+expires+"; path=/";
 }

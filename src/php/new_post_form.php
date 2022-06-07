@@ -10,7 +10,7 @@
     // Add the categories to the html select dropdown
     $db = db_connection();
     $sql = "select * from categories";
-    $result = db_query($db, $sql);
+    $result = db_query($db, $sql, "Error getting the category information from the database.");
     $slices = explode("##row##", $html);
     $dropdown = "";
     while ($data = $result->fetch_assoc()){
