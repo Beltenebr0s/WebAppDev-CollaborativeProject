@@ -8,9 +8,9 @@
         header("Location: ../../index.html");
     }
     // 1. Get the main page template
-    $html = file_get_contents("../../html_templates/main_page_template.html");
+    $html = file_get_contents("../../home.html");
     // 2. Split the page in the ##table-row## tag
-    $slices = explode("##table-row##", $html); // This creates an array of text separated on the selected substring
+    $slices = explode("##item##", $html); // This creates an array of text separated on the selected substring
     // 3. Create the table with all the products
         // 3.1. Connect to the database
     $db = db_connection();
@@ -20,18 +20,18 @@
     $result = db_query($db, $sql, "Error retrieving the products from the database.");
         // 3.3. Fill the table with the data from the query
     $table = "";
-    $row = file_get_contents("../../html_templates/product_template.html");
+    // $row = file_get_contents("../../html_templates/product_template.html");
     while ($data = $result->fetch_assoc()){
         $aux = $slices[1];
-        $aux = str_replace("##row-content##", $row, $slices[1]);
+        // $aux = str_replace("##row-content##", $row, $slices[1]);
         $aux = str_replace("##id##", $data['id'], $aux);
         $aux = str_replace("##title##", $data['title'], $aux);
         $aux = str_replace("##description##", $data['product_description'], $aux);
-        $aux = str_replace("##owner##", $data['real_name'] . " ".$data['surname1'] . " ".$data['surname2'], $aux);
+        $aux = str_replace("##name##", $data['real_name'] . " ".$data['surname1'] . " ".$data['surname2'], $aux);
         if($data['img_name'] != NULL){
-            $aux = str_replace("##image##", $img_dir.$data['img_name'], $aux);
+            $aux = str_replace("##main-image##", $img_dir.$data['img_name'], $aux);
         } else {
-            $aux = str_replace("##image##", $img_dir."no-image.jpg", $aux);
+            $aux = str_replace("##main-image##", $img_dir."no-image.jpg", $aux);
         }
         
         $table .= $aux;
