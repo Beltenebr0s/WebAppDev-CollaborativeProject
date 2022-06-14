@@ -296,8 +296,10 @@ single use components
 
 .item__info__image {
     height: 164px;
+    width: 164px;
     border-radius: 16px;
     margin-right: 16px;
+    object-fit: cover;
 }
 
 .item__info__description {
@@ -365,10 +367,10 @@ single use components
     height: 420px;
 }
 
-.seller-card {
+.product__seller-card {
     padding: 16px;
     border-radius: 16px;
-    
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
 }
 
 
